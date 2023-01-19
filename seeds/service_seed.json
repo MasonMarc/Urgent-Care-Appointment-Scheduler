@@ -1,0 +1,30 @@
+[
+    {
+        "service_name": "common illnesses",
+        "category_name": "minor services"
+    },
+    {
+        "service_name": "minor injuries",
+        "category_name": "minor services"
+    },
+    {
+        "service_name": "X-ray",
+        "category_name": "diagnostics"
+    },
+    {
+        "service_name": "lab services",
+        "category_name": "diagnostics"
+    },
+    {
+        "service_name": "phsyicals",
+        "category_name": "wellness care"
+    },
+    {
+        "service_name": "vaccinations",
+        "category_name": "wellness care"
+    },
+    {
+        "service_name": "pediatrics",
+        "category_name": "wellness care"
+    }
+]
