@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const {} = require('../models/');
+const { } = require('../models/');
 
 // get all posts for homepage
 router.get('/', async (req, res) => {
   try {
-    res.render('homepage');
+    res.render('homepage', { loggedIn: req.session.loggedIn });
   } catch (err) {
     res.status(500).json(err);
   }
