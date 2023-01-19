@@ -27,5 +27,21 @@ router.get('/signup', (req, res) => {
 
   res.render('signup');
 });
+router.get('/services', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('services');
+});
+router.get('/calendar', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('calendar');
+});
 
 module.exports = router;
