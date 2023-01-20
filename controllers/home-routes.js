@@ -36,7 +36,7 @@ router.get('/services', async (req, res) => {
 
     const service = dbServiceData.map((service) => service.get({ plain: true }));
     console.log(`this is ${service}`);
-    res.render('services', { service });
+    res.render('services', { service, loggedIn: req.session.loggedIn });
     // res.json(service);
   } catch (err) {
     console.log(err);
@@ -45,12 +45,11 @@ router.get('/services', async (req, res) => {
 });
 
 router.get('/calendar', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
+  try {
+    res.render('calendar', { loggedIn: req.session.loggedIn });
+  } catch (err) {
+    res.status(500).json(err);
   }
-
-  res.render('calendar');
 });
 
 module.exports = router;
