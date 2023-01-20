@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const { } = require('../models/');
+const { Service } = require('../models');
+
 
 // get all posts for homepage
 router.get('/', async (req, res) => {
@@ -27,14 +29,21 @@ router.get('/signup', (req, res) => {
 
   res.render('signup');
 });
-router.get('/services', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
 
-  res.render('services');
+router.get('/services', async (req, res) => {
+  try {
+    const dbServiceData = await Service.findAll({});
+
+    const service = dbServiceData.map((service) => service.get({ plain: true }));
+    console.log(`this is ${service}`);
+    res.render('services', { service });
+    // res.json(service);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
+
 router.get('/calendar', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');
