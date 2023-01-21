@@ -1,5 +1,6 @@
 const User = require('./User');
 const Service = require('./service');
+const Appointment = require('./appointment');
 
 // ASSOCIATIONS HERE
 
@@ -7,4 +8,5 @@ const Service = require('./service');
 module.exports = {
   User,
   Service,
+  Appointment,
 };
