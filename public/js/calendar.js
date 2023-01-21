@@ -30,6 +30,10 @@ document.addEventListener('DOMContentLoaded', function () {
             startTime: '08:00', // a start time (10am in this example)
             endTime: '20:00', // an end time (6pm in this example)
         },
+        resources: {
+            url: '/seeds/appointment_seed.json',
+            method: ''
+          },
         eventDidMount: (info) => {
             console.log(info);
         },
