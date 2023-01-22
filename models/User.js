@@ -20,6 +20,22 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false
     },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    firstname: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    lastname: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    telephone: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
