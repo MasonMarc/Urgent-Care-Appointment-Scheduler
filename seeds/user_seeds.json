@@ -1,24 +1,42 @@
 [
-    {
-      "username": "Jolene",
-      "password": "dolly"
-    },
-    {
-      "username": "Reba",
-      "password": "password"
-    },
-    {
-      "username": "Tim",
-      "password": "tim"
-    },
-    {
-      "username": "Shania",
-      "password": "twain"
-    },
-    {
-      "username": "Steve",
-      "password": "burton"
-    }
-  ]
-  
-  
+  {
+    "username": "jolene",
+    "email": "jolene4@singer.com",
+    "firstname": "Jolene",
+    "lastname": "Baxter",
+    "telephone": "704-555-2943",
+    "password": "dolly"
+  },
+  {
+    "username": "rsurvivor",
+    "email": "reba@survivor.com",
+    "firstname": "Reba",
+    "lastname": "McEntire",
+    "telephone": "704-555-3437",
+    "password": "password"
+  },
+  {
+    "username": "timmcgraw",
+    "email": "timmcgraw4@email.com",
+    "firstname": "Tim",
+    "lastname": "McGraw",
+    "telephone": "704-555-2693",
+    "password": "tim123"
+  },
+  {
+    "username": "shania123",
+    "email": "stwain4@newmail.com",
+    "firstname": "Shania",
+    "lastname": "Twain",
+    "telephone": "704-555-2948",
+    "password": "passtwain"
+  },
+  {
+    "username": "steveb",
+    "email": "stebur@star.com",
+    "firstname": "Steve",
+    "lastname": "Burton",
+    "telephone": "704-555-8545",
+    "password": "passpass"
+  }
+]

@@ -2,7 +2,7 @@
 
 <body class="text-center">
 
-  <main class="form-signin w-50 m-auto">
+  <main class="form-signin w-50 mt-5 m-auto">
     <form id="signup-form">
       <img class="mb-4" src="/assets/UrgentCareFavicon.png" alt="" width="100" height="100">
       <h1 class="h3 mb-3 fw-normal">Please enter your information:</h1>
@@ -12,13 +12,28 @@
         <label for="username-input-signup">Username</label>
       </div>
       <div class="form-floating">
+        <input type="email" class="form-control" id="email-input-signup" placeholder="username">
+        <label for="email-input-signup">Email</label>
+      </div>
+      <div class="form-floating">
+        <input type="text" class="form-control" id="firstname-input-signup" placeholder="username">
+        <label for="firstname-input-signup">First Name</label>
+      </div>
+      <div class="form-floating">
+        <input type="text" class="form-control" id="lastname-input-signup" placeholder="username">
+        <label for="lastname-input-signup">Last Name</label>
+      </div>
+      <div class="form-floating">
+        <input type="tel" class="form-control" id="tel-input-signup" placeholder="username">
+        <label for="tel-input-signup">Telephone Number</label>
+      </div>
+      <div class="form-floating">
         <input type="password" class="form-control" id="password-input-signup" placeholder="Password">
         <label for="password-input-signup">Password</label>
       </div>
-
-      <button class="w-100 btn btn-lg btn-primary" type="submit" id="signup-btn">Sign in</button>
+      <br>
+      <button class="w-100 btn btn-lg btn-primary" type="submit" id="signup-btn">Register</button>
       <a href="/login">Login instead?</a>
-      <p class="mt-5 mb-3 text-muted">© 2017–2023</p>
     </form>
   </main>
   <script src="/js/signup.js"></script>

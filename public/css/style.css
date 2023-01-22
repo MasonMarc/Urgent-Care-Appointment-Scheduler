@@ -2,10 +2,43 @@
     background: none !important;
     border: none;
     padding: 0 !important;
-    text-decoration: underline;
-    cursor: pointer;
 }
 
-.service{
+#logout-link {
+    color: white;
+}
+
+.service {
     padding: 1em;
+}
+
+nav .navbar-nav li a {
+    color: white !important;
+}
+
+.login-alert {
+    margin-top: 10%;
+    text-align: center;
+    font-size: 30px;
+}
+
+.login-alert a {
+    text-decoration: none;
+}
+
+.login-alert a:hover {
+    color: red;
+}
+
+.home-list {
+    list-style-type: none;
+}
+
+#home-appt-btn a {
+    text-decoration: none;
+    color: white;
+}
+
+.calendar {
+    margin-top: 3%;
 }

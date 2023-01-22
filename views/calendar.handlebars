@@ -1,9 +1,10 @@
-{{#if loggedIn}}
-<div class="container">
-    <div id='calendar'></div>
+<div class="calendar">
+    {{#if loggedIn}}
+    <div class="container">
+        <div id='calendar'></div>
+    </div>
+    <script src="/js/calendar.js"></script>
+    {{else}}
+    <div class="login-alert"><a href="/login">You must login to make an appointment.</a></div>
+    {{/if}}
 </div>
-<script src="/js/calendar.js"></script>
-{{else}}
-<a href="/login">You must login first to view this page</a>
-{{/if}}
-
