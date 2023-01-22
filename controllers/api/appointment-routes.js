@@ -3,6 +3,7 @@ const { Appointment } = require('../../models');
 
 router.get('/', (req, res) => {
   Appointment.findAll().then((appointmentData) => {
+    console.log(appointmentData[0].dataValues.start)
     res.json(appointmentData);
   });
 });
@@ -17,6 +18,7 @@ router.post('/', async (req, res) => {
     req.session.save(() => {
       req.session.appointmentId = newAppointment.id;
       req.session.start = newAppointment.start;
+      req.session.title = newAppointment.title;
       req.session.loggedIn = true;
 
       res.json(newAppointment);
