@@ -11,6 +11,10 @@ router.post('/', async (req, res) => {
   try {
     const newUser = await User.create({
       username: req.body.username,
+      email: req.body.email,
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
+      telephone: req.body.telephone,
       password: req.body.password,
     });
 
