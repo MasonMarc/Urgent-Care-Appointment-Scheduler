@@ -11,13 +11,13 @@ Appointment.init(
       primaryKey: true,
       autoIncrement: true
     },
-    start: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
     title: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    start: {
+      type: DataTypes.STRING,
+      allowNull: false
     }
   },
   {
