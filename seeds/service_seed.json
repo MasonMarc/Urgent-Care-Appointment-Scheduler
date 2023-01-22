@@ -1,30 +1,38 @@
 [
     {
-        "service_name": "common illnesses",
-        "category_name": "minor services"
+        "service_name": "Common Illnesses",
+        "category_name": "Minor Services"
     },
     {
-        "service_name": "minor injuries",
-        "category_name": "minor services"
+        "service_name": "Minor Injuries",
+        "category_name": "Minor Services"
+    },
+    {
+        "service_name": "Reproductive Health",
+        "category_name": "Minor Services"
     },
     {
         "service_name": "X-ray",
-        "category_name": "diagnostics"
+        "category_name": "Diagnostics"
     },
     {
-        "service_name": "lab services",
-        "category_name": "diagnostics"
+        "service_name": "Lab Services",
+        "category_name": "Diagnostics"
     },
     {
-        "service_name": "phsyicals",
-        "category_name": "wellness care"
+        "service_name": "COVID-19",
+        "category_name": "Diagnostics"
     },
     {
-        "service_name": "vaccinations",
-        "category_name": "wellness care"
+        "service_name": "Phsyicals",
+        "category_name": "Wellness Care"
     },
     {
-        "service_name": "pediatrics",
-        "category_name": "wellness care"
+        "service_name": "Vaccinations",
+        "category_name": "Wellness Care"
+    },
+    {
+        "service_name": "Pediatrics",
+        "category_name": "Wellness Care"
     }
 ]

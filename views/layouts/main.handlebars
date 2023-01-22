@@ -34,7 +34,10 @@
             <a class="nav-link active" aria-current="page" href="/services">Services</a>
           </li>
           {{#if loggedIn}}
-          <button id="logout-link" class="btn" id="logoutbtn">Logout</button>
+          <a class="nav-item">
+            <button id="logout-link" class="btn" id="logoutbtn"
+              style="padding-left: 0; padding-bottom: 0.2rem">Logout</button>
+          </a>
           {{else}}
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/login">Login</a>
@@ -50,8 +53,8 @@
   </main>
 
   <div class="container py-4">
-    <footer class="pt-3 mt-4 text-muted border-top">
-      © 2023
+    <footer class="pt-3 mt-4 text-muted border-top text-center">
+      © 2023 Express Urgent Care
     </footer>
   </div>
 
