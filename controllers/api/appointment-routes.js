@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Appointment } = require('../../models');
 
 router.get('/', (req, res) => {
-  appointment.findAll().then((appointmentData) => {
+  Appointment.findAll().then((appointmentData) => {
     res.json(appointmentData);
   });
 });
@@ -10,21 +10,21 @@ router.get('/', (req, res) => {
 router.post('/', async (req, res) => {
   try {
     const newAppointment = await Appointment.create({
-    //   username: req.body.username,
-    //   password: req.body.password,
+      title: req.body.title,
+      start: req.body.start,
     });
-      } catch (err) {
+
+    req.session.save(() => {
+      req.session.appointmentId = newAppointment.id;
+      req.session.start = newAppointment.start;
+      req.session.loggedIn = true;
+
+      res.json(newAppointment);
+    });
+  } catch (err) {
     res.status(500).json(err);
   }
 });
-
-//     req.session.save(() => {
-//       req.session.userId = newUser.id;
-//       req.session.username = newUser.username;
-//       req.session.loggedIn = true;
-
-      res.json(newAppointment);
-//     });
 
 
 module.exports = router;
