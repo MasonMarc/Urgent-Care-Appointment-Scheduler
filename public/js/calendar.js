@@ -1,24 +1,14 @@
-document.addEventListener('DOMContentLoaded', function () {
+
+document.addEventListener('DOMContentLoaded', function (x, y) {
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
+
         timeZone: 'UTC',
         events: [
             { // this object will be "parsed" into an Event Object
                 id: 1,
-                title: 'Appt 1', // a property!
-                start: '2023-01-01', // a property!
-                // end: '2023-01-02' // a property! ** see important note below about 'end' **
-            },
-            { // this object will be "parsed" into an Event Object
-                id: 2,
-                title: 'The Title', // a property!
-                start: '2023-01-03', // a property!
-                // end: '2023-01-02' // a property! ** see important note below about 'end' **
-            },
-            { // this object will be "parsed" into an Event Object
-                id: 3,
-                title: 'The Title', // a property!
-                start: '2023-01-04', // a property!
+                title: x, // a property!
+                start: y, // a property!
                 // end: '2023-01-02' // a property! ** see important note below about 'end' **
             }
         ],
@@ -33,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
         resources: {
             url: '/seeds/appointment_seed.json',
             method: ''
-          },
+        },
         eventDidMount: (info) => {
             console.log(info);
         },
@@ -48,3 +38,32 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     calendar.render();
 });
+
+const addEvents = async () => {
+
+    const response = await fetch('/api/appointments', {
+        method: 'GET',
+        body: JSON.stringify({
+            title: title,
+            start: start,
+        }),
+        headers: { 'Content-Type': 'application/json' },
+    })
+        .then((title, start) => {
+            console.log(title + ' ' + start)
+            addEventListener(title, start);
+        })
+    if (response.ok) {
+        alert("good")
+    } else {
+        alert('Failed');
+    }
+
+};
+
+
+
+// test
+
+addEvents();
+
