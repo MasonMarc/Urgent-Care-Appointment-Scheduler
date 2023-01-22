@@ -52,4 +52,39 @@ router.get('/calendar', (req, res) => {
   }
 });
 
+router.get('/user-profile', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('user-profile');
+});
+
+router.get('/user/:id]]', async (req, res) => {
+  try {
+    const dbUserData = await User.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: [
+            'id',
+            'username',
+            'firstname',
+            'lastname',
+            'telephone',
+            'email',
+          ],
+        },
+      ],
+    });
+
+    const user = dbUserData.get({ plain: true });
+    res.render('user', { user, loggedIn: req.session.loggedIn });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
