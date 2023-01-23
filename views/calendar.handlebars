@@ -1,27 +1,42 @@
-<div class="container w-100">
-    <form id="appt-form">
-      <h1 class="h3 mb-3 fw-normal">Please enter appointment information:</h1>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#appointmentModal">Make
+  Appointment</button>
 
-      <div class="form-floating">
-        <input type="title" class="form-control" id="title-input" placeholder="title">
-        <label for="title-input">Title</label>
+<div class="modal fade" id="appointmentModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="form-floating">
-        <input type="start" class="form-control" id="start-input" placeholder="start">
-        <label for="start-input">Start</label>
-      <button class="w-100 btn btn-lg btn-primary" type="submit" id="appt-btn">Register</button>
-    </form>
+      <div class="modal-body">
+        <form id="appt-form">
+          <div class="mb-3">
+            <label for="title-input" class="col-form-label">Title:</label>
+            <input type="title" class="form-control" id="title-input">
+          </div>
+          <div class="mb-3">
+            <label for="start-input" class="col-form-label">Start:</label>
+            <input type="start" class="form-control" id="start-input">
+          </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit" id="appt-btn">Register</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="calendar">
-    {{#if loggedIn}}
-    <div class="container">
-        <div id='calendar'></div>
-    </div>
-    <script src="/js/calendar.js"></script>
-    {{else}}
-    <div class="login-alert"><a href="/login">You must login to make an appointment.</a></div>
-    {{/if}}
+  {{#if loggedIn}}
+  <div class="container">
+    <div id='calendar'></div>
+  </div>
+  <script src="/js/calendar.js"></script>
+  {{else}}
+  <div class="login-alert"><a href="/login">You must login to make an appointment.</a></div>
+  {{/if}}
 </div>
 
-  <script src="/js/appointmentadd.js"></script>
+<script src="/js/appointmentadd.js"></script>

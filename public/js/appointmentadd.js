@@ -15,6 +15,7 @@ const response = await fetch('/api/appointments', {
   });
 
   if (response.ok) {
+    document.location.replace('/calendar');
     alert('appointment added')
   } else {
     alert('Failed to add');
