@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     var events = await getEvents();
     var calendar = new FullCalendar.Calendar(calendarEl, {
 
-        timeZone: 'UTC',
+        timeZone: 'local',
         events: events,
         selectable: true,
         businessHours: {

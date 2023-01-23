@@ -7,6 +7,12 @@ router.get('/', (req, res) => {
   });
 });
 
+router.get('/:id', (req, res) => {
+  User.findByPk(req.params.id).then((userData) => {
+    res.json(userData);
+  });
+});
+
 router.post('/', async (req, res) => {
   try {
     const newUser = await User.create({
