@@ -1,3 +1,8 @@
+<link href="/css/profile.css" rel="stylesheet">
 <div class="container">
+    {{#if loggedIn}}
     {{> user-profile-details}}
+    {{else}}
+    <div class="login-alert"><a href="/login">You must login to make an appointment.</a></div>
+    {{/if}}
 </div>
