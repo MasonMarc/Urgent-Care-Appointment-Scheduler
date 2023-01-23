@@ -1,17 +1,11 @@
 
-document.addEventListener('DOMContentLoaded', function (x, y) {
+document.addEventListener('DOMContentLoaded', async function () {
     var calendarEl = document.getElementById('calendar');
+    var events = await getEvents();
     var calendar = new FullCalendar.Calendar(calendarEl, {
 
         timeZone: 'UTC',
-        events: [
-            { // this object will be "parsed" into an Event Object
-                id: 1,
-                title: x, // a property!
-                start: y, // a property!
-                // end: '2023-01-02' // a property! ** see important note below about 'end' **
-            }
-        ],
+        events:events,
         selectable: true,
         businessHours: {
             // days of week. an array of zero-based day of week integers (0=Sunday)
@@ -32,38 +26,25 @@ document.addEventListener('DOMContentLoaded', function (x, y) {
             // this is where we add functionality to view an appointment
         },
         dateClick: function (info) {
-            alert('This day is: ' + info.dateStr);
+            console.log(info)
             // This is where we add functionality to book an appointment
         }
     });
     calendar.render();
 });
 
-const addEvents = async () => {
+const getEvents = async () => {
+   
+    const response = await fetch('/api/appointments')
+    console.log(response)
+    const eventData = await response.json()
+    console.log(eventData)
+    // const events = eventData.map(calendarEvent => {
+    //     calendarEvent.start = new Date (calendarEvent.start)
+    //     return calendarEvent
+    // }) 
 
-    const response = await fetch('/api/appointments', {
-        method: 'GET',
-        body: JSON.stringify({
-            title: title,
-            start: start,
-        }),
-        headers: { 'Content-Type': 'application/json' },
-    })
-        .then((title, start) => {
-            console.log(title + ' ' + start)
-            addEventListener(title, start);
-        })
-    if (response.ok) {
-        alert("good")
-    } else {
-        alert('Failed');
-    }
+    return eventData
+
 
 };
-
-
-
-// test
-
-addEvents();
-
