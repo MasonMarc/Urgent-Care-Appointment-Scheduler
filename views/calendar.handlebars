@@ -1,24 +1,31 @@
-{{!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#appointmentModal">Make
-  Appointment</button> --}}
-
 <div class="modal fade" id="appointmentModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Book an Appointment</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form id="appt-form">
           <div class="mb-3">
-            <label for="title-input" class="col-form-label">Title:</label>
-            <input type="title" class="form-control" id="title-input">
+            <label for="title-input" class="col-form-label">Choose a Service:</label>
+            <select name="services" type="title" class="form-control" id="title-input">
+              <option value="Common Illnesses">Common Illnesses</option>
+              <option value="Minor Injuries">Minor Injuries</option>
+              <option value="Reproductive Health">Reproductive Health</option>
+              <option value="X-ray">X-ray</option>
+              <option value="Lab Services">Lab Services</option>
+              <option value="COVID-19">COVID-19</option>
+              <option value="Phsyicals">Phsyicals</option>
+              <option value="Vaccinations">Vaccinations</option>
+              <option value="Pediatrics">Pediatrics</option>
+            </select>
           </div>
           <div class="mb-3">
             <label for="start-input" class="col-form-label">Start:</label>
-            <input type="start" class="form-control" id="start-input">
+            <input type="datetime-local" class="form-control" id="start-input" required>
           </div>
-        <button class="w-100 btn btn-lg btn-primary" type="submit" id="appt-btn">Register</button>
+          <button class="w-100 btn btn-lg btn-primary" type="submit" id="appt-btn">Submit</button>
         </form>
       </div>
       <div class="modal-footer">
