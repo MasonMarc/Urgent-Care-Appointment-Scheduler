@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     var calendar = new FullCalendar.Calendar(calendarEl, {
 
         timeZone: 'UTC',
-        events:events,
+        events: events,
         selectable: true,
         businessHours: {
             // days of week. an array of zero-based day of week integers (0=Sunday)
@@ -22,19 +22,20 @@ document.addEventListener('DOMContentLoaded', async function () {
             console.log(info);
         },
         eventClick: function (info) {
-            alert('This appointment is: ' + info.event.title);
+            console.log('This appointment is: ' + info.event.title);
             // this is where we add functionality to view an appointment
         },
         dateClick: function (info) {
             console.log(info)
-            // This is where we add functionality to book an appointment
+            const myModalAlternative = new bootstrap.Modal('#appointmentModal', {})
+            myModalAlternative.show();
         }
     });
     calendar.render();
 });
 
 const getEvents = async () => {
-   
+
     const response = await fetch('/api/appointments')
     console.log(response)
     const eventData = await response.json()
