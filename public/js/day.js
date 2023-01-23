@@ -4,8 +4,8 @@ dayjs().format()
 
 let today = dayjs().format('YYYY-MM-DDTHH:MM:A');
 
-console.log(today);
-
 const current = () => {
     return today;
 }
+
+console.log(current())
