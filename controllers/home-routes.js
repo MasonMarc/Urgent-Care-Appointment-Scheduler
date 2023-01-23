@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { } = require('../models/');
 const { Service } = require('../models');
+const { User } = require('../models');
 
 
 // get all posts for homepage
@@ -52,13 +53,17 @@ router.get('/calendar', (req, res) => {
   }
 });
 
-router.get('/user-profile', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
+router.get('/profile', async (req, res) => {
+  try {
+    const dbUserData = await User.findAll({});
 
-  res.render('user-profile');
+    const user = dbUserData.map((user) => user.get({ plain: true }));
+    console.log(`this is ${user}`);
+    res.render('profile', { user, loggedIn: req.session.loggedIn });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 router.get('/user/:id]]', async (req, res) => {
