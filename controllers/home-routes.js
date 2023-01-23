@@ -53,34 +53,31 @@ router.get('/calendar', (req, res) => {
   }
 });
 
+// router.get('/profile', async (req, res) => {
+//   try {
+//     const dbUserData = await User.findAll({});
+
+//     const user = dbUserData.map((user) => user.get({ plain: true }));
+//     console.log(`this is ${user}`);
+//     res.render('profile', { user, loggedIn: req.session.loggedIn });
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
+
 router.get('/profile', async (req, res) => {
   try {
-    const dbUserData = await User.findAll({});
+    const dbUserData = await User.findByPk(req.session.userId, {
 
-    const user = dbUserData.map((user) => user.get({ plain: true }));
-    console.log(`this is ${user}`);
-    res.render('profile', { user, loggedIn: req.session.loggedIn });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
+      attributes: [
+        'id',
+        'username',
+        'firstname',
+        'lastname',
+        'telephone',
+        'email',
 
-router.get('/profile/:id]]', async (req, res) => {
-  try {
-    const dbUserData = await User.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: [
-            'id',
-            'username',
-            'firstname',
-            'lastname',
-            'telephone',
-            'email',
-          ],
-        },
       ],
     });
 
