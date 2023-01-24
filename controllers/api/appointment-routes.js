@@ -13,6 +13,7 @@ router.post('/', async (req, res) => {
     const newAppointment = await Appointment.create({
       title: req.body.title,
       start: req.body.start,
+      username: req.session.username,
     });
 
     req.session.save(() => {

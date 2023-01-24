@@ -18,8 +18,12 @@ Appointment.init(
     start: {
       type: DataTypes.DATE,
       allowNull: false
-    }
+    },
+    username: {
+      type: DataTypes.STRING,
+      allowNull: false
   },
+},
   {
     sequelize,
     timestamps: false,
