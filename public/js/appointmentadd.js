@@ -1,24 +1,26 @@
 const appointmentAdd = async function (event) {
-    event.preventDefault();
-  
-    const titleEl = document.querySelector('#title-input');
-    const startEl = document.querySelector('#start-input');
+  event.preventDefault();
 
-const response = await fetch('/api/appointments', {
+  const titleEl = document.querySelector('#title-input');
+  const startEl = document.querySelector('#start-input');
+
+  console.log(startEl.value);
+
+  const response = await fetch('/api/appointments', {
     method: 'POST',
     body: JSON.stringify({
       title: titleEl.value,
       start: startEl.value,
-      
+
     }),
     headers: { 'Content-Type': 'application/json' },
   });
 
   if (response.ok) {
-    document.location.replace('/calendar');
-    alert('appointment added')
+    // document.location.replace('/calendar');
+    alert('Your appointment has been scheduled!')
   } else {
-    alert('Failed to add');
+    alert('There was a problem with this appointment! Please try again.');
   }
 };
 
