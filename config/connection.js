@@ -11,7 +11,7 @@ const sequelize = process.env.JAWSDB_URL
     host: 'localhost',
     dialect: 'mysql',
     port: 3306,
-    timezone: "-5:00"
+    // timezone: "-5:00"
   },);
 
 module.exports = sequelize;
