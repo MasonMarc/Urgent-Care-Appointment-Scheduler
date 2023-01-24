@@ -1,5 +1,6 @@
-const dayjs = require('dayjs')
-
+const dayjs = require('dayjs');
+const utc = require('dayjs/plugin/utc');
+dayjs.extend(utc)
 
 module.exports = {
   format_date: date => {
@@ -7,7 +8,7 @@ module.exports = {
   },
 
   today: () => {
-    return dayjs().format('YYYY-MM-DDTHH:MM');
+    return dayjs().utc().format('YYYY-MM-DDTHH:MM');
   }
 };
 

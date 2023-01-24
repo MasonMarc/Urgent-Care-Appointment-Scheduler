@@ -1,5 +1,3 @@
-const { noExtendLeft } = require("sequelize/types/lib/operators");
-
 const appointmentAdd = async function (event) {
   event.preventDefault();
 
@@ -12,8 +10,7 @@ const appointmentAdd = async function (event) {
     method: 'POST',
     body: JSON.stringify({
       title: titleEl.value,
-      start: startEl.value,
-
+      start: (new Date(startEl.value)).toISOString(),
     }),
     headers: { 'Content-Type': 'application/json' },
   });
