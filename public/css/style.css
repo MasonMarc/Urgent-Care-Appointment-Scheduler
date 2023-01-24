@@ -1,11 +1,15 @@
 #logoutbtn {
     background: none !important;
     border: none;
-    padding: 0 !important;
 }
 
 #logout-link {
     color: white;
+    padding-top: .45rem;
+}
+
+#profile-nav {
+    padding-right: .9rem;
 }
 
 .service {
@@ -40,5 +44,5 @@ nav .navbar-nav li a {
 }
 
 .calendar {
-    margin-top: 3%;
+    margin-top: 5%;
 }
