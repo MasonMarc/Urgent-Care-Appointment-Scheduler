@@ -49,6 +49,6 @@ This website uses technolgies such as Node.js, Bcrypt, Sequelize, Dayjs, Dotenv,
 
 ## Visuals
 
-![HomePage](../assets/HomeSH.png)
+![HomePage](./assets/HomepageScreenshot.png)
 
-![Calendar](../assets/CalendarSH.png)
+![Calendar](./assets/CalendarScreenshot.png)
