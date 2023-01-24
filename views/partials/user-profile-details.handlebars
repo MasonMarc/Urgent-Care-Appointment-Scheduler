@@ -1,9 +1,19 @@
 <link href="/css/login-register.css" rel="stylesheet">
 
-    <main class="form-signin w-50 mt-5 m-auto">
-        <p>{{user.username}}</p>
-        <p>{{user.email}}</p>
-        <p>{{user.firstname}}</p>
-        <p>{{user.lastname}}</p>
-        <p>{{user.telephone}}</p>
-    </main>
+<main>
+    <p id="profile-name">You are logged in as <strong>{{user.firstname}} {{user.lastname}}</strong>!</p>
+    <table id="profile-table">
+        <tr>
+            <td class="profile-title"><strong>Username:</strong></td>
+            <td class="profile-value">{{user.username}}</td>
+        </tr>
+        <tr>
+            <td class="profile-title"><strong>Email:</strong></td>
+            <td class="profile-value">{{user.email}}</td>
+        </tr>
+        <tr>
+            <td class="profile-title"><strong>Telephone:</strong></td>
+            <td class="profile-value">{{user.telephone}}</td>
+        </tr>
+    </table>
+</main>

@@ -1,0 +1,33 @@
+#profile-name {
+    padding-top: 3%;
+    text-align: center;
+    font-size: 36px;
+}
+
+#profile-table {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 24px;
+}
+
+.profile-title {
+    text-align: right;
+}
+
+.profile-value {
+    padding-left: 10%;
+}
+
+.login-alert {
+    margin-top: 10%;
+    text-align: center;
+    font-size: 30px;
+}
+
+.login-alert a {
+    text-decoration: none;
+}
+
+.login-alert a:hover {
+    color: red;
+}
