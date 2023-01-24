@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     var calendar = new FullCalendar.Calendar(calendarEl, {
 
         timeZone: 'local',
+        duration: '01:00',
         events: events,
         selectable: true,
         businessHours: {
