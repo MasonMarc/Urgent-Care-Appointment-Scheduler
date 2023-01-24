@@ -1,3 +1,5 @@
+const { noExtendLeft } = require("sequelize/types/lib/operators");
+
 const appointmentAdd = async function (event) {
   event.preventDefault();
 
@@ -17,7 +19,7 @@ const appointmentAdd = async function (event) {
   });
 
   if (response.ok) {
-    // document.location.replace('/calendar');
+    document.location.replace('/calendar');
     alert('Your appointment has been scheduled!')
   } else {
     alert('There was a problem with this appointment! Please try again.');
